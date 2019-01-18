@@ -18,16 +18,10 @@ if __name__ == "__main__":
 
         # add only experienced players to teams
         sharks = {player: info for player, info in zip(range(1,7), rows[0:7]) if info['Soccer Experience'] == 'YES'}
+        for i, o in inex_players.items():
+            sharks[i] = o
         raptors = {player: info for player, info in zip(range(1,7), rows[6:13]) if info['Soccer Experience'] == 'YES'}
         dragons = {player: info for player, info in zip(range(1,7), rows[12:19]) if info['Soccer Experience'] == 'YES'}
     
             
     print(sharks)
-    print(raptors)
-    print(dragons)
-    print(inex_players)
-  
-    test1 = {1: OrderedDict([('Name', 'I tell ya')])}
-    test2 = {1: {'Name': 'Joe Smith'}}
-    print(test1[1])
-    print(test2)
