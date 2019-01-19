@@ -1,4 +1,8 @@
 # soccer-league
 
-## good news everyone!
-Due on the 21
+## abstraction
+Extract and sort data from a CSV file.
+Insert data into a new text.
+
+## due date
+the 21st
