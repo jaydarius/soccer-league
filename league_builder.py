@@ -1,7 +1,9 @@
 import csv
 
+
 ex_players = []
 inex_players = []
+
 
 # Write teams as <lists> to teams.txt
 def teamstxt_writer(teams):
@@ -11,22 +13,22 @@ def teamstxt_writer(teams):
 # Concatentate team player data to a string
 def create_str(team):
     for player_dict in team:
-            string = (player_dict['Name'] + '\n  ' + 'Soccer Experience: ' + player_dict['Soccer Experience'] + ', ' + 'Guardian Name(s): ' + player_dict['Guardian Name(s)'])
-            string = (f"{player_dict['Name']}\n  "
-                      f"Soccer Experience: {player_dict['Soccer Experience']}, "
-                      f"Guardian Name(s): {player_dict['Guardian Name(s)']}"
-                      )
-            teamstxt_writer(string)
+        string = (
+            f"{player_dict['Name']}\n  "
+            f"Soccer Experience: {player_dict['Soccer Experience']}, "
+            f"Guardian Name(s): {player_dict['Guardian Name(s)']}")
+        teamstxt_writer(string)
 
 # Write welcome letter to each player
 def write_welcome(team_list, team_name):
     for player in team_list:
         filename = player['Name'].replace(" ", "_") + ".txt"
-        welcome_letter = (f"Dear {player['Guardian Name(s)']},\n"
-                          f"{player['Name']} is now on team {team_name}!\n"
-                          "We look forward to fun and fair play.\n"
-                          "The first practice is January 26 at 2pm.")
-                            
+        welcome_letter = (
+            f"Dear {player['Guardian Name(s)']},\n"
+            f"{player['Name']} is now on team {team_name}!\n"
+            "We look forward to fun and fair play.\n"
+            "The first practice is January 26 at 2pm.") 
+
         with open(filename, "a") as file:
             file.write(welcome_letter)
         
